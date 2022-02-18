@@ -47,7 +47,7 @@ module.exports = templateData => {
                 <h3 id="usage">Usage</h3>
                 <p>${body.usage}</p>
                 <h3 id="license">License</h3>
-                <p>${body.license}</p>
+                <p>${body.license.join(", ")}</p>
                 <h3 id="contributing">Contributing</h3>
                 <p>${body.contributing}</p>
                 <h3 id="tests">Tests</h3>

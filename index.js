@@ -1,8 +1,8 @@
 // // TODO: Include packages needed for this application
 const fs = require("fs")
 const generatePage = require("./src/page-template.js")
+const generateMarkdown = require("./utils/generateMarkdown.js")
 const inquirer = require("inquirer")
-const { title } = require("process")
 
 // // TODO: Create an array of questions for user input
 const questions = () => {
@@ -56,10 +56,10 @@ const questions = () => {
             }
         },
         {
-            type: "list",
+            type: "checkbox",
             name: "license",
-            message: "Please choose a license for your application from the list below. Select an answer by pressing 'Enter'",
-            choices: ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5", "Option 6"]
+            message: "Please choose a license for your application from the list below.",
+            choices: ["Apache", "GNU GPLv3", "ISC", "MIT"]
         },
         {
             type: "input",
@@ -104,23 +104,23 @@ const questions = () => {
         }
     ])
 }
-questions()
-// .then(answers => console.log (answers))
-.then(questionsData => {
+
+// TODO: Create a function to write README file
+const writeToFile = questionsData => {
     const pageHTML = generatePage(questionsData)
-    fs.writeFile("index.html", pageHTML, err => {
+    fs.writeFile("./dist/index.html", pageHTML, err => {
         if(err) throw err;
-
-        console.log("congrats!")
     })
-})
 
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+    const licenseHTML = generateMarkdown(questionsData.license)
+    // console.log(questionsData.license)
+}
 
+// TODO: Create a function to initialize app
+function init() {
+    questions()
+    .then(writeToFile)
+}
 
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
+// Function call to initialize app
+init();
