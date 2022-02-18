@@ -92,18 +92,6 @@ const questions = () => {
         },
         {
             type: "input",
-            name: "link",
-            message: "Enter the link to your GitHub profile? (Required)",
-            validate: linkInput => {
-                if(linkInput) {
-                    return true
-                } else {
-                    console.log("Please enter the link to your github profile!")
-                }
-            }
-        },
-        {
-            type: "input",
             name: "email",
             message: "Enter your email address? (Required)",
             validate: emailInput => {
@@ -117,15 +105,19 @@ const questions = () => {
     ])
 }
 questions()
-.then(answers => console.log (answers))
+// .then(answers => console.log (answers))
+.then(questionsData => {
+    const pageHTML = generatePage(questionsData)
+    fs.writeFile("index.html", pageHTML, err => {
+        if(err) throw err;
+
+        console.log("congrats!")
+    })
+})
 
 // // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
-fs.writeFile("index.html", generatePage("name", "github"), err => {
-    if(err) throw err;
 
-    console.log("README complete Check out index")
-})
 
 // // TODO: Create a function to initialize app
 // function init() {}
