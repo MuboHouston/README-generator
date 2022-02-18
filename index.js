@@ -1,4 +1,6 @@
 // // TODO: Include packages needed for this application
+const fs = require("fs")
+const generatePage = require("./src/page-template.js")
 const inquirer = require("inquirer")
 const { title } = require("process")
 
@@ -119,6 +121,11 @@ questions()
 
 // // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
+fs.writeFile("index.html", generatePage("name", "github"), err => {
+    if(err) throw err;
+
+    console.log("README complete Check out index")
+})
 
 // // TODO: Create a function to initialize app
 // function init() {}
