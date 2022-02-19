@@ -1,6 +1,6 @@
 // // TODO: Include packages needed for this application
 const fs = require("fs")
-const generatePage = require("./src/page-template.js")
+// const generatePage = require("./src/generateMarkdown.js")
 const generateMarkdown = require("./utils/generateMarkdown.js")
 const inquirer = require("inquirer")
 
@@ -56,10 +56,10 @@ const questions = () => {
             }
         },
         {
-            type: "checkbox",
+            type: "list",
             name: "license",
             message: "Please choose a license for your application from the list below.",
-            choices: ["Apache", "GNU GPLv3", "ISC", "MIT"]
+            choices: ["Apache", "Eclipse", "GNU", "ISC", "MIT"]
         },
         {
             type: "input",
@@ -107,13 +107,10 @@ const questions = () => {
 
 // TODO: Create a function to write README file
 const writeToFile = questionsData => {
-    const pageHTML = generatePage(questionsData)
-    fs.writeFile("./dist/index.html", pageHTML, err => {
+    const pageHTML = generateMarkdown(questionsData)
+    fs.writeFile("./README.md", pageHTML, err => {
         if(err) throw err;
     })
-
-    const licenseHTML = generateMarkdown(questionsData.license)
-    // console.log(questionsData.license)
 }
 
 // TODO: Create a function to initialize app
