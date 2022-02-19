@@ -56,17 +56,14 @@ const renderLicenseLink = license => {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-// const renderLicenseSection = license => {
-//   renderLicenseBadge(license => {return licenseBadge})
-  // renderLicenseLink(license)
-// }
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # ${data.title}
 
-  ${renderLicenseBadge(data.license)} ${renderLicenseLink(data.license)}
+  ${renderLicenseBadge(data.license)}${renderLicenseLink(data.license)}
 
   ## Description
   ${data.description}

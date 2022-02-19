@@ -1,7 +1,7 @@
 
-  # Testing
+  # Testing #2
 
-  [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)] (https://opensource.org/licenses/ISC)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)
 
   ## Description
   Testing
@@ -21,7 +21,7 @@
   Testing
   
   ## License 
-  This project is licensed under ISC
+  This project is licensed under MIT
   
   ## Contributing 
   Testing
