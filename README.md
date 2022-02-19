@@ -1,12 +1,12 @@
 
-  # Testing #3
+  # Testing # 4
 
-  [![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)(https://opensource.org/licenses/EPL-1.0)
+  [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)] (https://www.gnu.org/licenses/gpl-3.0)
 
   ## Description
-  Testing 
+  Testing
 
-  ##Table of Contents
+  ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
   * [License](#license)
@@ -21,7 +21,7 @@
   Testing
   
   ## License 
-  This project is licensed under Eclipse
+  This project is licensed under GNU
   
   ## Contributing 
   Testing
