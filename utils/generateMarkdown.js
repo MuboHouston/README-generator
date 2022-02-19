@@ -1,39 +1,37 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  // if(!license) {
-  //   return "";
-  // }
-  return`
+const renderLicenseBadge = license => {
   let licenseBadge = ''
-    switch (${license}){
-      case 'Apache':
-        licenseBadge = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg);
-        break;
-      case 'Eclipse':
-        licenseBadge = "[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)";
-        break;
-      case 'GNU':
-        licenseBadge = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]";
-        break;
-      case 'ISC':
-        licenseBadge = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)]"
-        break;
-      case 'MIT':
-        licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)"
-        break;
-    }
-  `
+  if(!license) {
+    return "";
+  } else {
+  switch (license){
+    case 'Apache':
+      licenseBadge = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)";
+      break;
+    case 'Eclipse':
+      licenseBadge = "[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)";
+      break;
+    case 'GNU':
+      licenseBadge = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]";
+      break;
+    case 'ISC':
+      licenseBadge = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)]"
+      break;
+    case 'MIT':
+      licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)"
+      break;
+  }
+  return licenseBadge;
+  }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-  // if(!license) {
-  //   return "";
-  // }
-  // let licenseLink = ''
-  return`
+const renderLicenseLink = license => {
+  if(!license) {
+    return "";
+  } else{
   let licenseLink = ''
     switch (license){
       case 'Apache':
@@ -52,24 +50,23 @@ function renderLicenseLink(license) {
         licenseLink = "(https://opensource.org/licenses/MIT)"
         break;
     }
-  `
+    return licenseLink;
+  }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
-  if(!license) {
-    return "";
-  }
-  
-  console.log("Badge goes here")
-}
+// const renderLicenseSection = license => {
+//   renderLicenseBadge(license => {return licenseBadge})
+  // renderLicenseLink(license)
+// }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `
+  # ${data.title}
 
-  ${renderLicenseSection()}
+  ${renderLicenseBadge(data.license)} ${renderLicenseLink(data.license)}
 
   ## Description
   ${data.description}
@@ -98,9 +95,9 @@ function generateMarkdown(data) {
   ${data.tests}
 
   ## Questions
-  If you have any questions about this projects, please contact me directly at: ${data.email}
-  
   Find me on GitHub: https://github.com/${data.github}
+
+  If you have any questions about this projects, please contact me directly at: ${data.email}
 `;
 }
 
