@@ -1,10 +1,10 @@
 
-  # Testing #2
+  # Testing #3
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)
+  [![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)(https://opensource.org/licenses/EPL-1.0)
 
   ## Description
-  Testing
+  Testing 
 
   ##Table of Contents
   * [Installation](#installation)
@@ -21,7 +21,7 @@
   Testing
   
   ## License 
-  This project is licensed under MIT
+  This project is licensed under Eclipse
   
   ## Contributing 
   Testing
