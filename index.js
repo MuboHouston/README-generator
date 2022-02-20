@@ -108,7 +108,7 @@ const questions = () => {
 // TODO: Create a function to write README file
 const writeToFile = questionsData => {
     const pageHTML = generateMarkdown(questionsData)
-    fs.writeFile("./README.md", pageHTML, err => {
+    fs.writeFile("./dist/README.md", pageHTML, err => {
         if(err) throw err;
     })
 }
