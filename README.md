@@ -1,7 +1,7 @@
 <h1 align="center"> Welcome to Professional README Generator</h1>
 
 ## Description 
-This is a command line application that dynamically generates a professional README.md file from a user's input using the Inquirer package.
+This is a command line application that dynamically generates a professional README.md file from a user's input to the dist directory using the Inquirer package.
 
 
 ## Demo
