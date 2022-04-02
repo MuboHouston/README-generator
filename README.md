@@ -49,7 +49,7 @@ npm install
 4. Run the app
 
 ``` bash 
-npm start
+node index.js
 ```
 
 
